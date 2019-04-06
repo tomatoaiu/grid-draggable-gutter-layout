@@ -26,24 +26,16 @@ export default Vue.extend({
     return {
       grid: [
         {
-          name: "row-1-col-1",
-          row: 1,
-          col: 1
+          name: "row-1-col-1"
         },
         {
-          name: "row-1-col-2",
-          row: 1,
-          col: 2
+          name: "row-1-col-2"
         },
         {
-          name: "row-2-col-1",
-          row: 2,
-          col: 1
+          name: "row-2-col-1"
         },
         {
-          name: "row-2-col-2",
-          row: 2,
-          col: 2
+          name: "row-2-col-2"
         }
       ]
     };

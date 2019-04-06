@@ -3,10 +3,12 @@
     <grid-item
       v-for="(item, index) of grid"
       :key="index"
-      :grid-row="item.row"
-      :grid-column="item.col"
+      :grid-row="gridRow(item.name)"
+      :grid-column="gridCol(item.name)"
     >
-      <slot :name="`row-${item.row}-col-${item.col}`"></slot>
+      <slot
+        :name="`row-${gridRow(item.name)}-col-${gridCol(item.name)}`"
+      ></slot>
     </grid-item>
   </div>
 </template>
@@ -62,6 +64,14 @@ export default class GridDraggableGutterLayout extends Vue {
     } else {
       return "100px 100px";
     }
+  }
+
+  gridRow(name: string): number {
+    return parseInt(name.split("-")[1]);
+  }
+
+  gridCol(name: string): number {
+    return parseInt(name.split("-")[3]);
   }
 }
 </script>
