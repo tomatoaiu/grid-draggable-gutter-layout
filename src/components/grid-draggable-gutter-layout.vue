@@ -16,6 +16,7 @@
 <script lang="ts">
 import GridItem from "./grid-item.vue";
 import { Vue, Component, Prop } from "vue-property-decorator";
+import { GridItemModel } from "../Models";
 
 @Component({
   components: { GridItem }
@@ -24,7 +25,7 @@ export default class GridDraggableGutterLayout extends Vue {
   width: number = 200;
   height: number = 600;
 
-  @Prop(Array) readonly grid!: [];
+  @Prop(Array) readonly grid!: GridItemModel[];
   @Prop(Number) readonly row!: number;
   @Prop(Number) readonly col!: number;
 
