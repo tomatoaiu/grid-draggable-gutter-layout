@@ -1,14 +1,12 @@
 <template>
   <div :style="style" ref="grid">
     <grid-item
-      v-for="(item, index) of grid"
+      v-for="(item, index) of gridLayout"
       :key="index"
-      :grid-row="gridRow(item.name)"
-      :grid-column="gridCol(item.name)"
+      :grid-row="item.row"
+      :grid-column="item.col"
     >
-      <slot
-        :name="`row-${gridRow(item.name)}-col-${gridCol(item.name)}`"
-      ></slot>
+      <slot :name="item.name"></slot>
     </grid-item>
   </div>
 </template>
@@ -47,6 +45,17 @@ export default class GridDraggableGutterLayout extends Vue {
     };
   }
 
+  get gridLayout() {
+    return this.grid.map(item => {
+      const { row, col } = this.getRowAndCol(item.name);
+      return {
+        name: `row-${row}-col-${col}`,
+        row,
+        col
+      };
+    });
+  }
+
   mounted() {
     const grid: Element = this.$refs["grid"] as Element;
     this.width = grid.clientWidth as number;
@@ -67,12 +76,11 @@ export default class GridDraggableGutterLayout extends Vue {
     }
   }
 
-  gridRow(name: string): number {
-    return parseInt(name.split("-")[1]);
-  }
-
-  gridCol(name: string): number {
-    return parseInt(name.split("-")[3]);
+  getRowAndCol(name: string): { row: number; col: number } {
+    return {
+      row: parseInt(name.split("-")[1]),
+      col: parseInt(name.split("-")[3])
+    };
   }
 }
 </script>
