@@ -1,4 +1,6 @@
 # grid-draggable-gutter-layout
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Ftomatoaiu%2Fgrid-draggable-gutter-layout.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Ftomatoaiu%2Fgrid-draggable-gutter-layout?ref=badge_shield)
+
 > css grid layout + dragging gutter
 
 ## Usage
@@ -77,3 +79,7 @@ yarn run test:unit
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Ftomatoaiu%2Fgrid-draggable-gutter-layout.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Ftomatoaiu%2Fgrid-draggable-gutter-layout?ref=badge_large)
